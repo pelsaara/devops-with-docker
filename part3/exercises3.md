@@ -283,6 +283,7 @@ USER app
 CMD rails s
 
 ## 3.7
+[Option b) Docker](https://github.com/pelsaara/devops-with-docker/blob/master/part3/3.7.md)
 
 ## 3.8
 I'm skipping this exercise. 
