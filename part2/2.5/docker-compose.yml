@@ -1,0 +1,20 @@
+version: '3.5'
+
+services:
+  frontend:
+      ports:
+        - 5000:5000
+      build: ../../part1/1.10
+      container_name: frontend2.5
+  backend:
+      ports:
+        - 8000:8000
+      build: ../../part1/1.11
+      environment:
+        - REDIS=redis
+      container_name: backend2.5
+  redis:
+      image: redis
+      ports: 
+        - 6379:6379
+      container_name: redis2.5

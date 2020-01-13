@@ -1,0 +1,32 @@
+version: '3.5'
+
+services:
+  frontend:
+      ports:
+        - 5000:5000
+      build: ../../part1/1.10
+      container_name: frontend2.6
+  backend:
+      ports:
+        - 8000:8000
+      build: ../../part1/1.11
+      depends_on:
+        - postgresdb
+      environment:
+        - REDIS=redis
+        - DB_USERNAME=postgres
+        - DB_PASSWORD=salainensana
+        - DB_NAME=postgres
+        - DB_HOST=postgresdb
+      container_name: backend2.6
+  redis:
+      image: redis
+      ports: 
+        - 6379:6379
+      container_name: redis2.6
+  postgresdb:
+      image: postgres
+      restart: unless-stopped
+      environment:
+      POSTGRES_PASSWORD: salainensana
+      container_name: postgresdb

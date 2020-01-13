@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  frontend:
+      ports:
+        - 5000:5000
+      build: ../../part1/1.10
+      container_name: frontend
+  backend:
+      ports:
+        - 8000:8000
+      build: ../../part1/1.11
+      container_name: backend
